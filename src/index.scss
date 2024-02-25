@@ -45,3 +45,16 @@ button {
   padding-top: 50px;
   text-align: center;
 }
+
+.container {
+  --container-gap: 20px;
+
+  width: 100%;
+  max-width: calc(1200px + var(--container-gap) * 2);
+  padding: 0 var(--container-gap);
+  margin: 0 auto;
+
+  @media (max-width: 421px) {
+    --container-gap: 10px;
+  }
+}

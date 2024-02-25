@@ -5,6 +5,8 @@ import {useState} from "react";
 import Login from "../modal-auth/login/Login";
 import useAuth from "../../hooks/useAuth";
 import {Link} from "react-router-dom";
+import {ReactComponent as IconFavorite} from "./../../assets/svg/favorites.svg";
+import {ReactComponent as IconUser} from "./../../assets/svg/user.svg";
 
 export default function Header() {
 	const [isModalOpenLogin, setIsModalOpenLogin] = useState(false);
@@ -23,11 +25,12 @@ export default function Header() {
 	return(
 		<>
 			<header className="header">
-				<div className="header__container">
-					<Link className="header__logo" to="/">LOGO</Link>
-					
-					<div className="header__menu">
-						{!isAuth &&
+				<div className="container">
+					<div className="header__container">
+						<Link className="header__logo" to="/">Project Car</Link>
+						
+						<div className="header__menu">
+							{!isAuth &&
 							<>
 								<Button
 									type="button"
@@ -43,13 +46,14 @@ export default function Header() {
 									onClick={openModalRegistration}
 								/>
 							</>
-						}
-						{isAuth &&
+							}
+							{isAuth &&
 							<>
-								<Link to="/favorites">Favorites</Link>
-								<Link to="/profile">Profile</Link>
+								<Link className="header__menu-item" to="/favorites"><IconFavorite /></Link>
+								<Link className="header__menu-item" to="/profile"><IconUser /></Link>
 							</>
-						}
+							}
+						</div>
 					</div>
 				</div>
 			</header>
