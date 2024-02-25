@@ -1,9 +1,14 @@
 import "./home.scss";
 import IntroBanner from "../../components/intro-banner/IntroBanner";
 import useBannerApi from "../../hooks/useBannerApi";
+import Preloader from "../../components/preloader/Preloader";
 
 export default function HomePage() {
-	const {data, loading, error} = useBannerApi();
+	const {data, loading} = useBannerApi();
+	
+	if(loading) {
+		return <Preloader />
+	}
 	
 	return(
 		<div className="container">

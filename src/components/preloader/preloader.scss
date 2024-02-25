@@ -1,0 +1,19 @@
+.preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+  background: #ffffff;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+
+  &__icon {
+    width: 100px;
+    height: 100px;
+  }
+}

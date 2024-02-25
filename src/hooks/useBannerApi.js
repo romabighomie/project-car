@@ -4,16 +4,17 @@ import axios from "axios";
 export default function useBannerApi() {
 	const [data, setData] = useState([]);
 	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState(true);
 	
 	useEffect(() => {
 		const fetchBannerData = async () => {
 			try {
 				const response = await axios.get('https://65db52f53ea883a152918606.mockapi.io/api/v1/banner');
 				setData(response.data);
-			} catch (error) {
-				setError(error);
-			} finally {
+			}
+			catch (error) {
+				console.log(error);
+			}
+			finally {
 				setLoading(false);
 			}
 		};
@@ -21,5 +22,5 @@ export default function useBannerApi() {
 		fetchBannerData();
 	}, []);
 	
-	return {data, loading, error}
+	return {data, loading}
 }
