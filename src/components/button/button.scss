@@ -1,0 +1,21 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 120px;
+  height: 40px;
+  padding: 0 15px;
+
+  font-size: 20px;
+  color: #ffffff;
+  line-height: 1;
+
+  &--green {
+    background: #30c11c;
+  }
+
+  &--blue {
+    background: #03a9f4;
+  }
+}

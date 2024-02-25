@@ -1,34 +1,67 @@
 import "./header.scss";
-import {ReactComponent as IconUserAdd} from "../../assets/svg/user-add.svg"
-import {useState} from "react";
+import Button from "../button/Button";
 import Registration from "../modal-auth/registration/Registration";
+import {useState} from "react";
+import Login from "../modal-auth/login/Login";
+import useAuth from "../../hooks/useAuth";
+import {Link} from "react-router-dom";
 
 export default function Header() {
-	const [showRegistration, setShowRegistration] = useState(false);
+	const [isModalOpenLogin, setIsModalOpenLogin] = useState(false);
+	const [isModalOpenRegistration, setIsModalOpenRegistration] = useState(false);
 	
-	const handleOpenRegistration = () => {
-		setShowRegistration(true);
-	};
+	const {isAuth} = useAuth();
 	
-	const handleRegistrationSuccess = () => {
-		setShowRegistration(false);
-	};
+	const openModalLogin = () => {
+		setIsModalOpenLogin(true);
+	}
+	
+	const openModalRegistration = () => {
+		setIsModalOpenRegistration(true);
+	}
 	
 	return(
-		<header className="header">
-			<div className="header__container">
-				<div className="header__logo">LOGO</div>
-				<div className="header__menu">
-					<button
-						className="header__menu-item"
-						onClick={handleOpenRegistration}
-					>
-						<IconUserAdd className="header__menu-icon" />
-					</button>
+		<>
+			<header className="header">
+				<div className="header__container">
+					<Link className="header__logo" to="/">LOGO</Link>
+					
+					<div className="header__menu">
+						{!isAuth &&
+							<>
+								<Button
+									type="button"
+									text="Login"
+									color="green"
+									onClick={openModalLogin}
+								/>
+								
+								<Button
+									type="button"
+									text="Registration"
+									color="blue"
+									onClick={openModalRegistration}
+								/>
+							</>
+						}
+						{isAuth &&
+							<>
+								<Link to="/favorites">Favorites</Link>
+								<Link to="/profile">Profile</Link>
+							</>
+						}
+					</div>
 				</div>
-			</div>
+			</header>
 			
-			{showRegistration && <Registration onRegistrationSuccess={handleRegistrationSuccess}/>}
-		</header>
+			<Login
+				isModalOpen={isModalOpenLogin}
+				setIsModalOpen={setIsModalOpenLogin}
+			/>
+			<Registration
+				isModalOpen={isModalOpenRegistration}
+				setIsModalOpen={setIsModalOpenRegistration}
+			/>
+		</>
 	)
 }

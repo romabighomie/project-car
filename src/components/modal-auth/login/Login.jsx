@@ -3,7 +3,7 @@ import {setUser} from "store/slices/userSlice"
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import ModalAuth from "../ModalAuth";
 
-export default function Login({ onLoginSuccess }) {
+export default function Login({ isModalOpen, setIsModalOpen }) {
 	const dispatch = useDispatch();
 	
 	const handleLogin = (email, password) => {
@@ -15,21 +15,19 @@ export default function Login({ onLoginSuccess }) {
 					id: user.uid,
 					token: user.accessToken,
 				}))
-				onLoginSuccess();
 				console.log(user);
 			})
 			.catch(console.error)
 	}
 	
 	return(
-		<div>
-			<ModalAuth
-				title="Login"
-				buttonText="Sign in"
-				path="/register"
-				linkText="registration"
-				handleClick={handleLogin}
-			/>
-		</div>
+		<ModalAuth
+			title="Login"
+			buttonText="Sign in"
+			linkText="registration"
+			handleClick={handleLogin}
+			isModalOpen={isModalOpen}
+			setIsModalOpen={setIsModalOpen}
+		/>
 	)
 }
