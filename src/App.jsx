@@ -5,6 +5,7 @@ import FavoritesPage from "./pages/favorites/FavoritesPage";
 import ProfilePage from "./pages/profile/ProfilePage";
 import NotFoundPage from "./pages/not-found/NotFoundPage";
 import PrivateRoute from "./hoc/PrivateRoute";
+import CashierPage from "./pages/cashier/CashierPage";
 
 function App() {
   return (
@@ -20,6 +21,11 @@ function App() {
           <Route path="/profile" element={
             <PrivateRoute>
               <ProfilePage />
+            </PrivateRoute>
+          }/>
+          <Route path="/cashier" element={
+            <PrivateRoute>
+              <CashierPage />
             </PrivateRoute>
           }/>
           <Route path="*" element={<NotFoundPage />}/>

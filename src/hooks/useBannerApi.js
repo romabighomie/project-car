@@ -15,7 +15,9 @@ export default function useBannerApi() {
 				console.log(error);
 			}
 			finally {
-				setLoading(false);
+				setTimeout(() => {
+					setLoading(false);
+				}, 500)
 			}
 		};
 		

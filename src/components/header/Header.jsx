@@ -5,8 +5,8 @@ import {useState} from "react";
 import Login from "../modal-auth/login/Login";
 import useAuth from "../../hooks/useAuth";
 import {Link} from "react-router-dom";
-import {ReactComponent as IconFavorite} from "./../../assets/svg/favorites.svg";
-import {ReactComponent as IconUser} from "./../../assets/svg/user.svg";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faCartShopping, faHeart, faUser} from '@fortawesome/free-solid-svg-icons'
 
 export default function Header() {
 	const [isModalOpenLogin, setIsModalOpenLogin] = useState(false);
@@ -49,8 +49,9 @@ export default function Header() {
 							}
 							{isAuth &&
 							<>
-								<Link className="header__menu-item" to="/favorites"><IconFavorite /></Link>
-								<Link className="header__menu-item" to="/profile"><IconUser /></Link>
+								<Link className="header__menu-item" to="/favorites"><FontAwesomeIcon icon={faHeart} /></Link>
+								<Link className="header__menu-item" to="/cashier"><FontAwesomeIcon icon={faCartShopping} /></Link>
+								<Link className="header__menu-item" to="/profile"><FontAwesomeIcon icon={faUser} /></Link>
 							</>
 							}
 						</div>

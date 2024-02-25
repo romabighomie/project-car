@@ -20,6 +20,12 @@ const userSlice = createSlice({
 				id: action.payload.id,
 				token: action.payload.token
 			}));
+			
+			localStorage.setItem('lastUser', JSON.stringify({
+				email: action.payload.email,
+				id: action.payload.id,
+				token: action.payload.token
+			}));
 		},
 		removeUser(state) {
 			state.email = null;
