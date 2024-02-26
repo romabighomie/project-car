@@ -8,13 +8,15 @@ export default function ProfilePage() {
 	const dispatch = useDispatch();
 	
 	return(
-		<>
-			<h1>Profile Page</h1>
-			<br/>
-			<div>Welcome, {email}</div>
-			<button onClick={() => dispatch(removeUser())}>
-				Log out
-			</button>
-		</>
+		<div>
+			<div className="container">
+				<h1>Profile Page</h1>
+				<br/>
+				<div>Welcome, {email}</div>
+				<button onClick={() => dispatch(removeUser())}>
+					Log out
+				</button>
+			</div>
+		</div>
 	)
 }

@@ -1,7 +1,9 @@
 export default function CashierPage() {
 	return(
 		<div>
-			<h1>Cashier</h1>
+			<div className="container">
+				<h1>Cashier</h1>
+			</div>
 		</div>
 	)
 }

@@ -1,4 +1,14 @@
 .home {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 1.2;
+    color: #90A3BF;
+  }
 
   &__intro {
     display: grid;
@@ -8,5 +18,11 @@
     @media (max-width: 767px) {
       grid-template-columns: 1fr;
     }
+  }
+
+  &__cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+    grid-gap: 20px;
   }
 }

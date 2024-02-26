@@ -3,6 +3,7 @@ import Header from "../components/header/Header";
 import {useDispatch} from "react-redux";
 import {useEffect} from "react";
 import {setUser} from "../store/slices/userSlice";
+import Footer from "../components/footer/Footer";
 
 export default function Layout() {
 	const dispatch = useDispatch();
@@ -17,11 +18,14 @@ export default function Layout() {
 	
 	return(
 		<div className="page">
+			
 			<Header />
 			
 			<main className="main">
 				<Outlet />
 			</main>
+			
+			<Footer />
 			
 		</div>
 	)

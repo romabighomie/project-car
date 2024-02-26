@@ -2,8 +2,10 @@ import "./favorites.scss";
 
 export default function FavoritesPage() {
 	return(
-		<>
-			<h1>Favorites Page</h1>
-		</>
+		<div>
+			<div className="container">
+				<h1>Favorites Page</h1>
+			</div>
+		</div>
 	)
 }

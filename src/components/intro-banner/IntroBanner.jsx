@@ -3,13 +3,11 @@ import Button from "../button/Button";
 import {useNavigate} from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import Login from "../modal-auth/login/Login";
-import {useEffect, useState} from "react";
-import {useDispatch} from "react-redux";
-import {setUser} from "../../store/slices/userSlice";
+import {useState} from "react";
 import Registration from "../modal-auth/registration/Registration";
 
 export default function IntroBanner({ title, text, img }) {
-	const carImagePath = `images/${img}.png`;
+	const carImagePath = `images/${img}.webp`;
 	const {isAuth} = useAuth();
 	const navigate = useNavigate();
 	const [isModalOpenLogin, setIsModalOpenLogin] = useState(false);

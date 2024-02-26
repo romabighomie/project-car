@@ -15,6 +15,10 @@ button {
   cursor: pointer;
 }
 
+img {
+  pointer-events: none;
+}
+
 .page {
   display: flex;
   flex-direction: column;
@@ -22,6 +26,7 @@ button {
   position: relative;
   z-index: 1;
   overflow: hidden;
+  user-select: none;
 }
 
 .page-overlay {
@@ -41,9 +46,8 @@ button {
 
 .main {
   flex-grow: 1;
+  padding: 50px 0;
   background: #F6F7F9;
-  padding-top: 50px;
-  text-align: center;
 }
 
 .container {

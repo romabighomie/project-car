@@ -12,12 +12,12 @@
 
   overflow: hidden;
 
-  &:nth-child(1) {
+  &:nth-child(1n) {
     background-image: url("../../assets/images/intro-banner/bg-1.png");
     background-color: #54A6FF;
   }
 
-  &:nth-child(2) {
+  &:nth-child(2n) {
     background-image: url("../../assets/images/intro-banner/bg-2.png");
     background-color: #3563E9;
   }
@@ -45,8 +45,8 @@
   }
 
   &__image-car {
-    width: 400px;
-    height: 120px;
+    width: 300px;
+    height: 155px;
     position: absolute;
     bottom: 10px;
     left: 50%;
