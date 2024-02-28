@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
 
+  width: fit-content;
   min-width: 120px;
   height: 40px;
   padding: 0 15px;
@@ -17,5 +18,9 @@
 
   &--blue {
     background: #03a9f4;
+  }
+
+  &--red {
+    background: red;
   }
 }

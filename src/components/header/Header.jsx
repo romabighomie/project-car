@@ -50,7 +50,7 @@ export default function Header() {
 							{isAuth &&
 							<>
 								<Link className="header__menu-item" to="/favorites"><FontAwesomeIcon icon={faHeart} /></Link>
-								<Link className="header__menu-item" to="/cashier"><FontAwesomeIcon icon={faCartShopping} /></Link>
+								<Link className="header__menu-item" to="/cart"><FontAwesomeIcon icon={faCartShopping} /></Link>
 								<Link className="header__menu-item" to="/profile"><FontAwesomeIcon icon={faUser} /></Link>
 							</>
 							}

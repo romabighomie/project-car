@@ -1,6 +1,8 @@
 import {configureStore} from "@reduxjs/toolkit";
 import userReducer from "./slices/userSlice";
 import favoritesSlice from "./slices/favoritesSlice";
+import cartSlice from "./slices/cartSlice";
+import confirmSlice from "./slices/confrimSlice";
 
 const saveToSessionStorage = (store) => (next) => (action) => {
 	const result = next(action);
@@ -15,6 +17,8 @@ export const store = configureStore({
 	reducer: {
 		user: userReducer,
 		favorites: favoritesSlice,
+		cart: cartSlice,
+		confirm: confirmSlice,
 	},
 	preloadedState,
 	middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(saveToSessionStorage),

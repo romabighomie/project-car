@@ -1,14 +1,25 @@
 import "./favorites.scss";
 import Card from "../../components/card/Card";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {useNavigate} from "react-router-dom";
+import {addToCart} from "../../store/slices/cartSlice";
 
 export default function FavoritesPage() {
 	const favorites = useSelector((state) => state.favorites.items);
+	const dispatch = useDispatch();
+	
+	const navigate = useNavigate();
+	
+	const handleClick = (item) => {
+		dispatch(addToCart(item));
+		navigate('/cart');
+	}
 	
 	return(
 		<div>
 			<div className="container">
-				<h1 >Favorites Page</h1>
+				<h1>Favorites Page</h1>
+				
 				<br/>
 				<br/>
 				<br/>
@@ -26,6 +37,7 @@ export default function FavoritesPage() {
 							color={item.color}
 							price={item.price}
 							item={item}
+							handleClick={() => handleClick(item)}
 						/>
 					))}
 				</div>

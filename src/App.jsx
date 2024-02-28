@@ -5,7 +5,7 @@ import FavoritesPage from "./pages/favorites/FavoritesPage";
 import ProfilePage from "./pages/profile/ProfilePage";
 import NotFoundPage from "./pages/not-found/NotFoundPage";
 import PrivateRoute from "./hoc/PrivateRoute";
-import CashierPage from "./pages/cashier/CashierPage";
+import CartPage from "./pages/cart/CartPage";
 
 function App() {
   return (
@@ -23,9 +23,9 @@ function App() {
               <ProfilePage />
             </PrivateRoute>
           }/>
-          <Route path="/cashier" element={
+          <Route path="/cart" element={
             <PrivateRoute>
-              <CashierPage />
+              <CartPage />
             </PrivateRoute>
           }/>
           <Route path="*" element={<NotFoundPage />}/>

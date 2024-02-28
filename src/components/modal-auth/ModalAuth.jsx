@@ -58,6 +58,7 @@ export default function ModalAuth({ title, handleClick, buttonText, isModalOpen,
 										value={email}
 										placeholder="yourmail@gmail.com"
 										onChange={(event => setEmail(event.target.value))}
+										autoComplete="off"
 									/>
 								</div>
 								

@@ -5,10 +5,14 @@ import {faChargingStation, faGasPump, faGear, faHeart, faPalette} from "@fortawe
 import {faHeart as faHeartRegular} from "@fortawesome/free-regular-svg-icons";
 import {useDispatch, useSelector} from "react-redux";
 import {toggleFavorite} from "../../store/slices/favoritesSlice";
+import useAuth from "../../hooks/useAuth";
 
-export default function Card({ id, title, subtitle, img, fuel, gearbox, color, price, item }) {
+export default function Card({ id, title, subtitle, img, fuel, gearbox, color, price, item, handleClick }) {
 	const carImagePath = `images/${img}.webp`;
+	const {isAuth} = useAuth();
+	
 	const dispatch = useDispatch();
+	
 	const favorites = useSelector((state) => state.favorites.items);
 	const isFavorite = favorites.some((item) => item.id === id);
 	
@@ -19,9 +23,11 @@ export default function Card({ id, title, subtitle, img, fuel, gearbox, color, p
 	return(
 		<div className="card">
 			
-			<button className="card__favorites" onClick={() => handleToggleFavorites(item)}>
-				<FontAwesomeIcon icon={isFavorite ? faHeart : faHeartRegular} />
-			</button>
+			{isAuth &&
+				<button className="card__favorites" onClick={() => handleToggleFavorites(item)}>
+					<FontAwesomeIcon icon={isFavorite ? faHeart : faHeartRegular} />
+				</button>
+			}
 			
 			<div className="card__header">
 				<div className="card__title">{title}</div>
@@ -52,6 +58,7 @@ export default function Card({ id, title, subtitle, img, fuel, gearbox, color, p
 						type="button"
 						text="Buy Car"
 						color="blue"
+						onClick={handleClick}
 					/>
 				</div>
 			</div>
