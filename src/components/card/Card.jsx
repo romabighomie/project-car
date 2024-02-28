@@ -3,15 +3,24 @@ import Button from "../button/Button";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faChargingStation, faGasPump, faGear, faHeart, faPalette} from "@fortawesome/free-solid-svg-icons";
 import {faHeart as faHeartRegular} from "@fortawesome/free-regular-svg-icons";
+import {useDispatch, useSelector} from "react-redux";
+import {toggleFavorite} from "../../store/slices/favoritesSlice";
 
-export default function Card({ title, subtitle, img, fuel, gearbox, color, price }) {
+export default function Card({ id, title, subtitle, img, fuel, gearbox, color, price, item }) {
 	const carImagePath = `images/${img}.webp`;
+	const dispatch = useDispatch();
+	const favorites = useSelector((state) => state.favorites.items);
+	const isFavorite = favorites.some((item) => item.id === id);
+	
+	const handleToggleFavorites = (item) => {
+		dispatch(toggleFavorite(item));
+	}
 	
 	return(
 		<div className="card">
 			
-			<button className="card__favorites">
-				<FontAwesomeIcon icon={faHeartRegular} />
+			<button className="card__favorites" onClick={() => handleToggleFavorites(item)}>
+				<FontAwesomeIcon icon={isFavorite ? faHeart : faHeartRegular} />
 			</button>
 			
 			<div className="card__header">

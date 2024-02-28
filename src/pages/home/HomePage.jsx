@@ -39,6 +39,7 @@ export default function HomePage() {
 					<div className="home__cards-wrapper">
 						{cardData.map(item => (
 							<Card
+								id={item.id}
 								key={item.id}
 								title={item.title}
 								subtitle={item.subtitle}
@@ -47,6 +48,7 @@ export default function HomePage() {
 								gearbox={item.gearbox}
 								color={item.color}
 								price={item.price}
+								item={item}
 							/>
 						))}
 					</div>
