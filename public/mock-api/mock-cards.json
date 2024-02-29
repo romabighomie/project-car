@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "C-Class",
+    "subtitle": "Saloon",
+    "img": "mb-c-class-saloon",
+    "fuel": "Petrol",
+    "gearbox": "Automatic",
+    "color": "Black",
+    "price": 47000
+  },
+  {
+    "id": 2,
+    "title": "EQE",
+    "subtitle": "Saloon",
+    "img": "mb-eqe-saloon",
+    "fuel": "Electric",
+    "gearbox": "Automatic",
+    "color": "Black",
+    "price": 73300
+  },
+  {
+    "id": 3,
+    "title": "GLS",
+    "subtitle": "Suv",
+    "img": "mb-gls",
+    "fuel": "Petrol",
+    "gearbox": "Automatic",
+    "color": "Black",
+    "price": 113800
+  },
+  {
+    "id": 4,
+    "title": "S-Class",
+    "subtitle": "Saloon",
+    "img": "mb-s-class-saloon",
+    "fuel": "Petrol",
+    "gearbox": "Automatic",
+    "color": "Black",
+    "price": 107000
+  }
+]

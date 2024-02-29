@@ -13,6 +13,12 @@ export default function useCardApi() {
 			}
 			catch (error) {
 				console.log(error);
+				try {
+					const localResponse = await axios.get('/mock-api/mock-cards.json');
+					setCarDData(localResponse.data);
+				} catch (localError) {
+					console.log("Error fetching data from local file:", localError);
+				}
 			}
 			finally {
 				setTimeout(() => {

@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "Mercedes-Maybach S-Class",
+    "text": "Mercedes-Maybach S 680 | WLTP: weighted fuel consumption, combined: 14.3-13.4 l/100 km; CO 2 emissions weighted, combined: 326-303 g/km",
+    "img": "mb-maybach-s-class-saloon"
+  },
+  {
+    "id": 2,
+    "title": "Mercedes-Maybach GLS",
+    "text": "Mercedes-Maybach GLS 600 4MATIC | WLTP: Combined fuel consumption: 14.2-13.9 l/100 km; Combined CO₂ emissions: 320-314 g/km",
+    "img": "mb-maybach-gls"
+  }
+]
